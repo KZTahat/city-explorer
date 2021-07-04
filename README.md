@@ -78,12 +78,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+It is `City Explorer` application you can enter the name of the city, and we give you the langtiude and longitude of the location of this city along with a static map for this city.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+- creating enpty repo,
+- creating a react app then linking it to the empty repo,
+- installing nessesary json packeges (axios, bootstrap) for this app,
+- coding,
+- testing, 
+- pusing and deploying.
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+- libraries: React, Axios, react-bootstrap
+- languages: Javascript, JSx 
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
@@ -93,12 +102,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-Name of feature: ________________________________
+**Name of feature: `1. Set up your React repository & API keys.`**
 
-Estimate of time needed to complete: 1 hour
+Estimate of time needed to complete: `30 minutes`
 
-Start time: 2:30 pm
+Start time: `2:30 pm`
 
-Finish time: _____
+Finish time: `3:05`
 
-Actual time needed to complete: _____
+Actual time needed to complete: `35 minutes`
+
+**Name of feature: `2. creating form and showing the Info`**
+
+Estimate of time needed to complete: `1.5 hour`
+
+Start time: `3:07 pm`
+
+Finish time: `4:50 pm`
+
+Actual time needed to complete: `1 hour, 40 minutes`
