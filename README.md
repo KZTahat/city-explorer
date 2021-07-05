@@ -93,12 +93,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
-Name of feature: ________________________________
+Name of feature: `getting city info`
 
-Estimate of time needed to complete: 1 hour
+Estimate of time needed to complete: `1 hour`
 
-Start time: 2:30 pm
+Start time: `2:30 pm`
 
-Finish time: _____
+Finish time: `4:20 pm`
 
-Actual time needed to complete: _____
+Actual time needed to complete: `almost 2 hours`
