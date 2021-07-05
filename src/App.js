@@ -38,6 +38,8 @@ class App extends React.Component {
     await this.setState({
       description: weatherData.data.split(',')
     })
+
+ 
   };
 
   render() {
@@ -57,6 +59,7 @@ class App extends React.Component {
             <ListGroup.Item>longitude: {this.state.lon}</ListGroup.Item>
           </ListGroup>
         </Card>
+
         {this.state.showMap && (
           <img
             src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.lat},${this.state.lon}&zoom=14`}
