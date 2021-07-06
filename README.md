@@ -102,6 +102,17 @@ It is `City Explorer` application you can enter the name of the city, and we giv
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
+
+Name of feature: `getting city info`
+
+Estimate of time needed to complete: `1 hour`
+
+Start time: `2:30 pm`
+
+Finish time: `4:20 pm`
+
+Actual time needed to complete: `almost 2 hours`
+
 **Name of feature: `1. Set up your React repository & API keys.`**
 
 Estimate of time needed to complete: `30 minutes`

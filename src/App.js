@@ -11,7 +11,8 @@ class App extends React.Component {
       cityName: "-",
       lat: 0,
       lon: 0,
-      showMap: false
+      showMap: false,
+      description: []
     };
   }
 
@@ -23,12 +24,22 @@ class App extends React.Component {
     });
     let url = `https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.cityName}&format=json`;
     let cityInfo = await axios.get(url);
-  
+
     await this.setState({
       lat: cityInfo.data[0].lat,
       lon: cityInfo.data[0].lon,
-      showMap: true
+      showMap: true,
     });
+
+    let weatherData = await axios.get(
+      `${process.env.REACT_APP_SERVER}/getweatherinfo?city_name=${this.state.cityName}`
+    );
+
+    await this.setState({
+      description: weatherData.data.split(',')
+    })
+
+ 
   };
 
   render() {
@@ -48,9 +59,20 @@ class App extends React.Component {
             <ListGroup.Item>longitude: {this.state.lon}</ListGroup.Item>
           </ListGroup>
         </Card>
-        {this.state.showMap &&
-        <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.lat},${this.state.lon}&zoom=14`}/>
-        }
+
+        {this.state.showMap && (
+          <img
+            src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.lat},${this.state.lon}&zoom=14`}
+          />
+        )}
+
+        <Card style={{ width: "18rem" }}>
+          <ListGroup variant="flush">
+               {this.state.description.map((element,i) => {
+                return <ListGroup.Item key={i}>{this.state.description[i]}</ListGroup.Item>;
+              })}
+          </ListGroup>
+        </Card>
       </>
     );
   }
