@@ -10,12 +10,13 @@ class Movies extends React.Component {
           <Movie 
           poster_path={element.poster_path}
           title={element.title} 
-          Overview={element.overview}
-          Vote Average={element.vote_average}
-          Vote Count={element.vote_count}
-          Popularity={element.popularity}
-          Release Date={element.release_date}
+          overview={element.overview}
+          vote Average={element.vote_average}
+          vote Count={element.vote_count}
+          popularity={element.popularity}
+          release Date={element.release_date}
           ></Movie>
+
         </>
       );
     });
