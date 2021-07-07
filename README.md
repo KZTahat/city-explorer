@@ -142,3 +142,13 @@ Start time: `2:30 pm`
 Finish time: `4:20 pm`
 
 Actual time needed to complete: `almost 2 hours`
+
+**Name of feature: `Componentize`**
+
+Estimate of time needed to complete: `1 hour`
+
+Start time: `1:00`
+
+Finish time: `2:30 pm`
+
+Actual time needed to complete: `1.5 hour`

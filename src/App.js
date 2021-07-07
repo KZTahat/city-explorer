@@ -3,7 +3,8 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import Movie from "./components/Movie";
+import Weather from "./components/Weather";
+import Movies from "./components/Movies";
 
 class App extends React.Component {
   constructor(props) {
@@ -25,22 +26,17 @@ class App extends React.Component {
     await this.setState({
       cityName: event.target.cityName.value,
     });
-    // let url = `https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.cityName}&format=json`;
-    // let cityInfo = await axios.get(url);
 
-    // await this.setState({
-    //   lat: cityInfo.data[0].lat,
-    //   lon: cityInfo.data[0].lon,
-    //   showMap: true,
-    // });
+    let url = `https://eu1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.cityName}&format=json`;
+    let cityInfo = await axios.get(url);
 
-    // let weatherData = await axios.get(
-    //   `${process.env.REACT_APP_SERVER}/getforcastinfo?city_name=${this.state.cityName}`
-    // );
+    await this.setState({
+      lat: cityInfo.data[0].lat,
+      lon: cityInfo.data[0].lon,
+      showMap: true,
+    });
 
-    // await this.setState({
-    //   searchQuery: weatherData.data.split(","),
-    // });
+
 
     //http://localhost:3001/getweatherinfo?city_name=london
     axios
@@ -49,11 +45,13 @@ class App extends React.Component {
       )
       .then((element) => {
         this.setState({
-          bitWeather: element.data.data,
-          lat: element.data.lat,
-          lon: element.data.lon,
-          showMap: true,
+          // lat: element.data.lat,
+          // lon: element.data.lon,
+          bitWeather: element.data
+          // showMap: true
         });
+        console.log(element.data);
+        console.log(this.state.bitWeather);
       })
       .catch((error) => {
         console.log("inside the error (Weather) " + error);
@@ -98,23 +96,8 @@ class App extends React.Component {
           />
         )}
 
-        <Card style={{ width: "30rem" }}>
-          <ListGroup variant="flush">
-            {this.state.bitWeather.map((element, i) => {
-              return (
-                <div key={i}>
-                  <ListGroup.Item>
-                    {this.state.bitWeather[i].valid_date}: Low of{" "}
-                    {this.state.bitWeather[i].low_temp}, high of{" "}
-                    {this.state.bitWeather[i].high} with{" "}
-                    {this.state.bitWeather[i].weather.description}.
-                  </ListGroup.Item>
-                </div>
-              );
-            })}
-          </ListGroup>
-        </Card>
-        <Movie movies={this.state.movies}></Movie>
+        <Weather bitWeather={this.state.bitWeather}></Weather>
+        <Movies movies={this.state.movies}></Movies>
       </>
     );
   }
