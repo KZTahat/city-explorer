@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 class Movie extends React.Component {
     render() {
         return(
-            <Card style={{ width: "18rem", display: "inline-block" }}>
+            <Card style={{ width: "18rem"}}>
             <Card.Img
               variant="top"
               src={`https://image.tmdb.org/t/p/w500/${this.props.poster_path}`}

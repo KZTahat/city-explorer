@@ -12,6 +12,7 @@ class Weather extends React.Component {
             {this.props.bitWeather.map((element, i) => {
               return (
                 <WeatherDay
+                  key={i}
                   valid_date={this.props.bitWeather[i].valid_date}
                   low_temp={this.props.bitWeather[i].low_temp}
                   high_temp={this.props.bitWeather[i].high_temp}

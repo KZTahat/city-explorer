@@ -36,8 +36,6 @@ class App extends React.Component {
       showMap: true,
     });
 
-
-
     //http://localhost:3001/getweatherinfo?city_name=london
     axios
       .get(
@@ -47,11 +45,9 @@ class App extends React.Component {
         this.setState({
           // lat: element.data.lat,
           // lon: element.data.lon,
-          bitWeather: element.data
+          bitWeather: element.data,
           // showMap: true
         });
-        console.log(element.data);
-        console.log(this.state.bitWeather);
       })
       .catch((error) => {
         console.log("inside the error (Weather) " + error);
@@ -93,6 +89,7 @@ class App extends React.Component {
         {this.state.showMap && (
           <img
             src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.lat},${this.state.lon}&zoom=14`}
+            alt={`${this.state.cityName}`}
           />
         )}
 
